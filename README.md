@@ -15,9 +15,11 @@ ssh-keygen
 (perguntará qual nome gostaria de usar para identificar a chave)
 (perguntará qual senha gostaria de definir, caso não queira senha, prossiga com enter)
 
-digite ls para verificar se a chave foi gerada.
+digite ls 
+(para verificar se a chave foi gerada)
 
 digite cat nomedasuachave.pub
+(retorna a chave gerada)
 (a chave pública terá a extensão .pub)
 
 2) Como adicionar a chave SSH pública no servidor do github;
@@ -33,17 +35,44 @@ No campo (Key) você deverá inserir a chave do tipo pública gerada anteriormen
 
 3) Como e onde criar o arquivo de config conforme demonstrado em aula;
 
-o arquivo config deverá estar dentro da pasta .ssh
+o arquivo config deverá ser criado dentro da pasta .ssh (dentro da pasta de usuario).
 
+abra o arquivo config e digite:
+
+Host github.com
+User nomedeusuarioaqui
+Hostname ssh.github.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/nomedeusuarioaqui
+Port 443
+
+(nomedeusuarioaqui deverá ser o seu user do github)
 
 4) Clonar o projeto exemplo no link https://github.com/lhamello/fundamentosTI23
 
+crie um novo repositorio no github.
 
+acesse o link do projeto.
+clique em <> Code (green button)
+clique em SSH , copie a chave.
+abra o terminal dentro do local onde gostaria de alocar os arquivos do projeto.
+digite 
+git clone git@github.com:lhamello/fundamentosTI23.git
 
 
 5) Criar uma "branch" para edição do readme.md;
 
+acesse o terminal dentro da pasta do projeto.
+
+no terminal, digite git checkout -b nomedabranch
+depois digite git push --set-upstream origin nomedabranch
+
+
 6) Editar o arquivo readme.md adicionando os passos anteriores;
+
+digite no terminal git add README.md
+git commit -m "nomedocommit"
+git push --set-upstream origin nomedabranch
 
 7) Realizar um pull-request solicitando integração ao projeto principal.
 
