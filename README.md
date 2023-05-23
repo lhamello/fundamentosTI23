@@ -13,5 +13,5 @@ Cole a chave pública que está na área de transferência no campo "Chave".
 3) Como e onde criar o arquivo de config conforme demonstrado em aula;3//
 criar arquivo chamado config na pasta ssh
 configure o git com seus dados
-
-
+4) Clonar o projeto exemplo no link https://github.com/lhamello/fundamentosTI23
+clonado com sucesso usse git clone + 0 <linkdo repositorio>
